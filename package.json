@@ -1,0 +1,27 @@
+{
+  "name": "gunseer",
+  "version": "0.0.1",
+  "description": "A small spa for researching and buying gundam by preselected criterias",
+  "main": "WP.js",
+  "scripts": {
+    "test": "node WP.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Onolwe/Gunseer.git"
+  },
+  "keywords": [
+    "Gundam",
+    "Crawler"
+  ],
+  "author": "Onolwe Kaath Sokah",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Onolwe/Gunseer/issues"
+  },
+  "homepage": "https://github.com/Onolwe/Gunseer#readme",
+  "devDependencies": {
+    "express": "^4.16.3",
+    "path": "^0.12.7"
+  }
+}

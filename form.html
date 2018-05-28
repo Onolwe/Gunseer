@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-width=1.0">
+        <title>Gunseer Specs Chooser</title>
+        <link rel="stylesheet" href="foundation.min.css">
+        <link rel="stylesheet" href="app.css">
+    </head>
+    <body>
+        <form class="formC" method="post">
+            <fieldset id="color" class="small-4">
+                Red: <input type="checkbox" name="redB" value="red">
+                Blue: <input type="checkbox" name="blueB" value="blue">
+                Black: <input type="checkbox" name="blackB" value="black">
+                Brown: <input type="checkbox" name="brownB" value="brown">
+                Yellow: <input type="checkbox" name="yellowB" value="yellow">
+                Green: <input type="checkbox" name="greenB" value="green">
+            </fieldset>
+            <div id="serie" class="small-9">
+                <input list="series" class="small-10" name="NoAnime" placeholder="ex: Gundam Seed">
+                <datalist id="series">
+                    <option value="Mobile Suit Gundam"></option>
+                    <option value="Mobile Suit Zeta Gundam"></option>
+                    <option value="Mobile Suit Gundam ZZ"></option>
+                    <option value="Mobile Suit Victory Gundam"></option>
+                    <option value="Mobile Fighter G Gundam"></option>
+                    <option value="After War Gundam X"></option>
+                    <option value="Mobile Suit Gundam AGE"></option>
+                    <option value="Gundam Wing"></option>
+                    <option value="Mobile Suit Gundam SEED Destiny"></option>
+                    <option value="Mobile Suit Gundam SEED"></option>
+                    <option value="Mobile Suit Gundam 00"></option>
+                    <option value="Mobile Suit Gundam Unicorn"></option>
+                </datalist>
+            </div>
+        </form>
+
+        <script src="foundationjs/jquery.js"></script>
+        <script src="foundationjs/what-input.js"></script>
+        <script src="foundationjs/foundation.min.js"></script>
+    </body>
+</html>
