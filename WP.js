@@ -21,14 +21,15 @@ app.get('/', Server);
 //allow to collect data send by the submitted form
 app.post('/', urlencodedParser, Form);
 
-//function runned by server which load file 'index.html' located in the current directory
+//function runned by server which load file 'form.html' located in the current directory
 function Server(req, res){
-	res.sendFile(path.join(__dirname + '/index.html'));
+	res.sendFile(path.join(__dirname + '/form.html'));
 }
 
 //the data collection function
 function Form(req, res){
 	var sended = req.body;
+	console.log(sended.NoAnime);
 }
 
 //waiting for connection
