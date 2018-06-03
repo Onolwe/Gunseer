@@ -1,5 +1,6 @@
 //loading needed packages
 const path = require('path');
+const html = require('html');
 const express = require('express');
 const body_parser = require('body-parser');
 
@@ -24,12 +25,14 @@ app.post('/', urlencodedParser, Form);
 //function runned by server which load file 'form.html' located in the current directory
 function Server(req, res){
 	res.sendFile(path.join(__dirname + '/form.html'));
+	console.log('serveur lancé');
 }
 
-//the data collection function
+//the data collection function and answering
 function Form(req, res){
 	var sended = req.body;
 	console.log(sended.NoAnime);
+	res.render('Answer.ejs', {test2: 'cool', test1: 'http://images4.fanpop.com/image/photos/20700000/Gundam-00-mobile-suit-gundam-00-20740655-1600-1200.jpg'});
 }
 
 //waiting for connection
