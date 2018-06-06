@@ -1,3 +1,41 @@
 body {
     max-width: 100%;
+    background-image: url('http://images4.fanpop.com/image/photos/20700000/Gundam-00-mobile-suit-gundam-00-20740655-1600-1200.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.row {
+    max-width: 62.5rem;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+    background-color: white;
+}
+
+.row .row {
+    margin-bottom: 0;
+}
+
+header {
+    padding: 2rem;
+    text-align: center;
+    font-size: 30pt;
+    background-color: #0c1EEE;
+}
+
+fieldset {
+    border: 1px solid #ff2F0d;
+    padding: 2rem;
+}
+
+.formC {
+    max-width: 65rem;
+    margin: 0 auto;
+    background-color: white;
+    padding-top: 3rem;
+    padding-bottom: 4.7rem;
+}
+
+#color {
+    padding: 2rem 3rem;
 }

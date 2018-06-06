@@ -8,35 +8,69 @@
         <link rel="stylesheet" href="app.css">
     </head>
     <body>
+        <header>
+                Gunseer Specs Chooser
+        </header>
         <form class="formC" method="post">
-            <fieldset id="color" class="small-4">
-                Red: <input type="checkbox" name="redB" value="red">
-                Blue: <input type="checkbox" name="blueB" value="blue">
-                Black: <input type="checkbox" name="blackB" value="black">
-                Brown: <input type="checkbox" name="brownB" value="brown">
-                Yellow: <input type="checkbox" name="yellowB" value="yellow">
-                Green: <input type="checkbox" name="greenB" value="green">
-            </fieldset>
-            <div id="serie" class="small-9">
-                <input list="series" class="small-10" name="NoAnime" placeholder="ex: Gundam Seed">
-                <datalist id="series">
-                    <option value="Mobile Suit Gundam"></option>
-                    <option value="Mobile Suit Zeta Gundam"></option>
-                    <option value="Mobile Suit Gundam ZZ"></option>
-                    <option value="Mobile Suit Victory Gundam"></option>
-                    <option value="Mobile Fighter G Gundam"></option>
-                    <option value="After War Gundam X"></option>
-                    <option value="Mobile Suit Gundam AGE"></option>
-                    <option value="Gundam Wing"></option>
-                    <option value="Mobile Suit Gundam SEED Destiny"></option>
-                    <option value="Mobile Suit Gundam SEED"></option>
-                    <option value="Mobile Suit Gundam 00"></option>
-                    <option value="Mobile Suit Gundam Unicorn"></option>
-                </datalist>
+            <div class="row">
+                <fieldset id="color" class="small-5 columns">
+                    <div class="row">
+                        Red: <input type="checkbox" class="small-2 columns"name="redB" value="red">
+                        Blue: <input type="checkbox" class="small-2 columns"name="blueB" value="blue">
+                        Black: <input type="checkbox" class="small-2 columns"name="blackB" value="black">
+                    </div>
+                    <div class="row">
+                        Brown: <input type="checkbox" class="small-2 columns"name="brownB" value="brown">
+                        Yellow: <input type="checkbox" class="small-2 columns"name="yellowB" value="yellow">
+                        Green: <input type="checkbox" class="small-2 columns"name="greenB" value="green">
+                    </div>
+                </fieldset>
+                <fieldset id="serie" class="small-offset-2 small-5 columns">
+                    <label for="series">Original Show:</label>
+                    <input list="series" name="NoAnime" placeholder="ex: Gundam Seed">
+                    <datalist id="series">bite
+                        <option value="Mobile Suit Gundam"></option>
+                        <option value="Mobile Suit Zeta Gundam"></option>
+                        <option value="Mobile Suit Gundam ZZ"></option>
+                        <option value="Mobile Suit Victory Gundam"></option>
+                        <option value="Mobile Fighter G Gundam"></option>
+                        <option value="After War Gundam X"></option>
+                        <option value="Mobile Suit Gundam AGE"></option>
+                        <option value="Gundam Wing"></option>
+                        <option value="Mobile Suit Gundam SEED Destiny"></option>
+                        <option value="Mobile Suit Gundam SEED"></option>
+                        <option value="Mobile Suit Gundam 00"></option>
+                        <option value="Mobile Suit Gundam Unicorn"></option>
+                    </datalist>
+                </fieldset>
             </div>
-			<input type="submit" value="Submit">
+            <fieldset class="row">
+                <label for="model">Model :</label>
+                <input type="text" name="model" placeholder="RX-78-2">
+                <label for="name">Name :</label>
+                <input type="text" name="name" placeholder="Gundam">
+            </fieldset>
+            <fieldset id="dimensions" class="row">
+                <div class="row">
+                    <p class="small-1">Less than</p><input class="small-1" type="radio" name="lessth" />
+                    <p class="small-1">More than</p><input class="small-1" type="radio" name="moreth" />
+                    <p class="small-1">Height :</p><input class="small-5"type="range" name="height" min="10" max="30" step="5" />
+                    <textarea class="small-1" id="heightText"></textarea>
+                    <p class="small-1">m</p>
+                </div>
+                <div class="row">
+                    <p class="small-1">Less than</p><input class="small-1" type="radio" name="lesstw" />
+                    <p class="small-1">More than</p><input class="small-1" type="radio" name="moretw" />
+                    <p class="small-1">Weight :</p><input class="small-5" type="range" name="weight" min="10" max="200" step="5" />
+                    <textarea class="small-1" id="weightText"></textarea>
+                    <p class="small-1">t</p>
+                </div>
+            </fieldset>
+            <input class="row" type="submit" value="Submit">
         </form>
+        <footer>
 
+        </footer>
         <script src="foundationjs/jquery.js"></script>
         <script src="foundationjs/what-input.js"></script>
         <script src="foundationjs/foundation.min.js"></script>
