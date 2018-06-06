@@ -32,9 +32,12 @@ function Server(req, res){
 function Form(req, res){
 	var sended = req.body;
 	console.log(sended.NoAnime);
+	console.log(sended.model);
+	console.log(sended.nameG);
+	console.log(sended.heightG);
+	console.log(sended.weightG);
 	res.render('Answer.ejs', {test2: 'cool', test1: 'http://images4.fanpop.com/image/photos/20700000/Gundam-00-mobile-suit-gundam-00-20740655-1600-1200.jpg'});
 }
 
 //waiting for connection
 app.listen(port, hostname);
-

@@ -48,31 +48,31 @@
                 <label for="model">Model :</label>
                 <input type="text" name="model" placeholder="RX-78-2">
                 <label for="name">Name :</label>
-                <input type="text" name="name" placeholder="Gundam">
+                <input type="text" name="nameG" placeholder="Gundam">
             </fieldset>
             <fieldset id="dimensions" class="row">
                 <div class="row">
-                    <p class="small-1">Less than</p><input class="small-1" type="radio" name="lessth" />
-                    <p class="small-1">More than</p><input class="small-1" type="radio" name="moreth" />
-                    <p class="small-1">Height :</p><input class="small-5"type="range" name="height" min="10" max="30" step="5" />
-                    <textarea class="small-1" id="heightText"></textarea>
-                    <p class="small-1">m</p>
+                    <p class="small-1">Less than</p><input class="small-1" type="radio" name="rh" value="lessThan" checked/>
+                    <p class="small-1">More than</p><input class="small-1" type="radio" name="rh" value="moreThan"/>
+                    <p class="small-1">Height :</p><input id="hRange" class="small-6"type="range" name="heightG" min="10" max="30" step="1" />
+                    <input type="text" class="small-1" id="heightText" readonly="readonly" />
                 </div>
                 <div class="row">
-                    <p class="small-1">Less than</p><input class="small-1" type="radio" name="lesstw" />
-                    <p class="small-1">More than</p><input class="small-1" type="radio" name="moretw" />
-                    <p class="small-1">Weight :</p><input class="small-5" type="range" name="weight" min="10" max="200" step="5" />
-                    <textarea class="small-1" id="weightText"></textarea>
-                    <p class="small-1">t</p>
+                    <p class="small-1">Less than</p><input class="small-1" type="radio" name="rw" value="lessThan" checked/>
+                    <p class="small-1">More than</p><input class="small-1" type="radio" name="rw" value="moreThan"/>
+                    <p class="small-1">Weight :</p><input id="wRange" class="small-6" type="range" name="weightG" min="10" max="200" step="1" value="30" />
+                    <input type="text" class="small-1" id="weightText" readonly="readonly" />
                 </div>
             </fieldset>
             <input class="row" type="submit" value="Submit">
         </form>
         <footer>
-
+            <p>team A<sup>3</sup></p>
+            All Rights reserved
         </footer>
         <script src="foundationjs/jquery.js"></script>
         <script src="foundationjs/what-input.js"></script>
         <script src="foundationjs/foundation.min.js"></script>
+        <script src="form.js"></script>
     </body>
 </html>
