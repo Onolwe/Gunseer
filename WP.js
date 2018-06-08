@@ -6,7 +6,6 @@ const body_parser = require('body-parser');
 
 var request = require("request");
 var cheerio = require("cheerio");
-var http = require("http");
 var wait = require("wait.for");
 
 //method simplified
@@ -36,9 +35,12 @@ function Server(req, res){
 //the data collection function and answering
 function Form(req, res){
 	var sended = req.body;
-	var url_ans = getUrl(sended);
-	var tab = getCarac(url_ans);
-	res.render('Answer.ejs', {name: tab[0], image: tab[1], url: url_ans});
+	console.log(sended.arm);
+	var tab = getCarac(sended);
+	setTimeout(function(){
+		res.render('Answer.ejs', {name: tab[0], image: tab[1], url: tab[2]}); 
+	}, 200000);
+	
 }
 
 //waiting for connection
@@ -66,7 +68,7 @@ function getUrl(tag)
         }
       });
     });
-    return gundam;
+    return 'http://gundam.wikia.com';
   });
 }
 
@@ -91,8 +93,10 @@ function searchWords(url, tag, callback)
   });
 }
 
-function getCarac(url)
+function getCarac(sended)
 {
+  var url = getUrl(sended.arm);
+  setTimeout(function(){
   var r = [];
   request(
   {
@@ -103,8 +107,10 @@ function getCarac(url)
     var $ = cheerio.load(body);
     r[0] = $(".page-header__title").text();
     r[1] = $(".pi-image-thumbnail").attr('src');
+	r[2] = url;
     console.log(r.join(", "));
   });
   return r;
+  }, 20000);
 }
 
