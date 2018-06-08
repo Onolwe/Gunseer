@@ -14,15 +14,28 @@
         <form class="formC" method="post">
             <div class="row">
                 <fieldset id="color" class="small-5 columns">
-                    <div class="row">
-                        Red: <input type="checkbox" class="small-2 columns"name="redB" value="red">
-                        Blue: <input type="checkbox" class="small-2 columns"name="blueB" value="blue">
-                        Black: <input type="checkbox" class="small-2 columns"name="blackB" value="black">
+                    <div <div class="row">
+                      Armement :
                     </div>
                     <div class="row">
-                        Brown: <input type="checkbox" class="small-2 columns"name="brownB" value="brown">
-                        Yellow: <input type="checkbox" class="small-2 columns"name="yellowB" value="yellow">
-                        Green: <input type="checkbox" class="small-2 columns"name="greenB" value="green">
+                        Gun: <input type="checkbox" class="small-2 columns"name="redB" value="gun">
+                        Cannon: <input type="checkbox" class="small-2 columns"name="blueB" value="cannon">
+                        Missile: <input type="checkbox" class="small-2 columns"name="blackB" value="missile">
+                    </div>
+                    <div class="row">
+                        Sword: <input type="checkbox" class="small-2 columns"name="brownB" value="sword">
+                        Saber: <input type="checkbox" class="small-2 columns"name="yellowB" value="saber">
+                        Axe: <input type="checkbox" class="small-2 columns"name="greenB" value="axe">
+                    </div>
+                    <div class="row">
+                        Tonfa: <input type="checkbox" class="small-2 columns"name="brownB" value="tonfa">
+                        Claw: <input type="checkbox" class="small-2 columns"name="yellowB" value="Claw">
+                        Fang: <input type="checkbox" class="small-2 columns"name="greenB" value="Fang">
+                    </div>
+                    <div class="row">
+                        Grenade: <input type="checkbox" class="small-2 columns"name="brownB" value="grenade">
+                        Beam: <input type="checkbox" class="small-2 columns"name="yellowB" value="beam">
+                        Shield: <input type="checkbox" class="small-2 columns"name="greenB" value="shield">
                     </div>
                 </fieldset>
                 <fieldset id="serie" class="small-offset-2 small-5 columns">
@@ -45,23 +58,29 @@
                 </fieldset>
             </div>
             <fieldset class="row">
-                <label for="model">Model :</label>
+                <label for="model">Model Number:</label>
                 <input type="text" name="model" placeholder="RX-78-2">
                 <label for="name">Name :</label>
                 <input type="text" name="nameG" placeholder="Gundam">
             </fieldset>
-            <fieldset id="dimensions" class="row">
+            <fieldset id="pilot" class="row">
                 <div class="row">
-                    <p class="small-1">Less than</p><input class="small-1" type="radio" name="rh" value="lessThan" checked/>
-                    <p class="small-1">More than</p><input class="small-1" type="radio" name="rh" value="moreThan"/>
-                    <p class="small-1">Height :</p><input id="hRange" class="small-6"type="range" name="heightG" min="10" max="30" step="1" />
-                    <input type="text" class="small-1" id="heightText" readonly="readonly" />
+                  Pilot Only :
                 </div>
                 <div class="row">
-                    <p class="small-1">Less than</p><input class="small-1" type="radio" name="rw" value="lessThan" checked/>
-                    <p class="small-1">More than</p><input class="small-1" type="radio" name="rw" value="moreThan"/>
-                    <p class="small-1">Weight :</p><input id="wRange" class="small-6" type="range" name="weightG" min="10" max="200" step="1" value="30" />
-                    <input type="text" class="small-1" id="weightText" readonly="readonly" />
+                    Yes : <input type="radio" class="small-2 columns"name="pilotO" value="Pilot only">
+                    No : <input type="radio" class="small-2 columns"name="pilotO" value=" ">
+                </div>
+            </fieldset>
+            <fieldset id="ArmorM" class="row">
+                <div class="row">
+                  Armor material :
+                </div>
+                <div class="row">
+                  Steel: <input type="radio" class="small-2 columns"name="mat" value="steel">
+                  Titanium: <input type="radio" class="small-2 columns"name="mat" value="titanium">
+                  Gundarium: <input type="radio" class="small-2 columns"name="mat" value="gundarium">
+                  Ceramic: <input type="radio" class="small-2 columns"name="mat" value="ceramic">
                 </div>
             </fieldset>
             <input id="sub" class="small-1" type="submit" value="Submit">
