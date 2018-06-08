@@ -4,6 +4,11 @@ const html = require('html');
 const express = require('express');
 const body_parser = require('body-parser');
 
+var request = require("request");
+var cheerio = require("cheerio");
+var http = require("http");
+var wait = require("wait.for");
+
 //method simplified
 const urlencodedParser = body_parser.urlencoded({ extended: false })
 
@@ -31,13 +36,75 @@ function Server(req, res){
 //the data collection function and answering
 function Form(req, res){
 	var sended = req.body;
-	console.log(sended.NoAnime);
-	console.log(sended.model);
-	console.log(sended.nameG);
-	console.log(sended.heightG);
-	console.log(sended.weightG);
-	res.render('Answer.ejs', {test2: 'cool', test1: 'http://images4.fanpop.com/image/photos/20700000/Gundam-00-mobile-suit-gundam-00-20740655-1600-1200.jpg'});
+	var url = getUrl(sended);
+	var tab = getCarac(url);
+	res.render('Answer.ejs', {name: tab[0], image: tab[1], url: url});
 }
 
 //waiting for connection
 app.listen(port, hostname);
+
+function getUrl(tag)
+{
+  request(
+  {
+    uri: "http://gundam.wikia.com/wiki/Concept:Mobile_Weapons_-_Universal_Century_Mobile_Weapons",
+  },
+  function(error, response, body)
+  {
+    var gundam ;
+    var $ = cheerio.load(body);
+    $(".smw-column-responsive li a").each(function(i, elem) {
+      var url = 'http://gundam.wikia.com' + $(this).attr('href');
+      return searchWords(url, tag, function(t){
+        console.log(url);
+        if(t)
+        {
+          console.log(url);
+          gundam = url;
+          return false;
+        }
+      });
+    });
+    return gundam;
+  });
+}
+
+function searchWords(url, tag, callback)
+{
+  var t, nb, b = true, i;
+  request(
+  {
+    uri: url,
+  },
+  function(error, response, body)
+  {
+    var $ = cheerio.load(body);
+    for(i = 0; i < tag.length && b; ++i)
+    {
+      t = $("body").filter(function() {
+        return $(this).text().indexOf(tag[i]) > -1;
+      });
+      b = (t.text() != '') && b;
+    }
+    callback(b);
+  });
+}
+
+function getCarac(url)
+{
+  var r = [];
+  request(
+  {
+    uri: url,
+  },
+  function(error, response, body)
+  {
+    var $ = cheerio.load(body);
+    r[0] = $(".page-header__title").text();
+    r[1] = $(".pi-image-thumbnail").attr('src');
+    console.log(r.join(", "));
+  });
+  return r;
+}
+
